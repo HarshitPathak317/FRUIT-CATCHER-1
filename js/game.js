@@ -104,6 +104,7 @@ class Game{
                      //fill code here, to destroy the objects.
                      if(fruitGroup.isTouching(players)){
                         fruitGroup.destroyEach();
+                        score = score+5;
                     }
                   }
                 
