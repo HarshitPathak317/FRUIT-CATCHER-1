@@ -105,6 +105,7 @@ class Game{
                      if(fruitGroup.isTouching(players)){
                         fruitGroup.destroyEach();
                         score = score+5;
+                        player.update();
                     }
                   }
                 
