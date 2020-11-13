@@ -31,7 +31,7 @@ class Game{
     
     player2 = createSprite(800,500);
     player2.addImage("player2", player_img);
-    players=[player1,player2];
+    players = [player1,player2];
 
         }
     
@@ -56,10 +56,10 @@ class Game{
                      players[index -1].y = y;
                        
                      if(index === player.index){
-                         
-                         fill("black");
-                         textSize(25);
-                         text(allPlayers[plr].name ,x-25,y+25);
+                         fill('pink');
+                         textSize(20);
+                         text(allPlayers[plr].name ,x,y+30);
+                         text(allPlayers[plr].score ,10,40);
 
                          
                      }
@@ -80,7 +80,7 @@ class Game{
                     player.update();
                 }
             
-                 if (frameCount % 20 === 0) {
+                 if (frameCount % 35 === 0) {
                      fruits = createSprite(random(100, 1000), 0, 100, 100);
                      fruits.velocityY = 6;
                      var rand = Math.round(random(1,5));
@@ -102,6 +102,9 @@ class Game{
                  
                   if (player.index !== null) {
                      //fill code here, to destroy the objects.
+                     if(fruitGroup.isTouching(players)){
+                        fruitGroup.destroyEach();
+                    }
                   }
                 
 
